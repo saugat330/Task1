@@ -41,10 +41,10 @@ class UserController extends Controller
             if($alluser->password == $req->password){
                 return redirect('/home');
             }else{
-                return back();
+                return back()->with('password','Wrong password!!!');
             }
         } else {
-            return back();
+            return back()->with('email','Invalid email!!!');
         }
 
     }

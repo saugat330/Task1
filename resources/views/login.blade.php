@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Login and Registration Form in HTML & CSS | CodingLab </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="{{asset('/css/style.css')}} ">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -26,6 +28,15 @@
         <div class="forms">
             <div class="form-content">
                 <div class="login-form">
+                    @if(Session::has('password') || Session::has('email'))
+                    <div class="alert alert-danger" role="alert">
+                        @if(Session::has('password'))
+                      {{Session::get('password')}}
+                      @elseif(Session::has('email'))
+                      {{Session::get('email')}}
+                      @endif
+                   </div>
+                   @endif
                     <div class="title">Login</div>
                     <form action="{{route('userLogin')}}" method="post">
                         @csrf
@@ -50,6 +61,7 @@
             </div>
         </div>
     </div>
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
 </body>
 
 </html>
