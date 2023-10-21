@@ -18,7 +18,7 @@
         <input type="checkbox" id="flip">
         <div class="cover">
             <div class="front">
-                <img src="{{asset('/img/std.jpg')}}" alt="">
+                
                 <div class="text">
                     <span class="text-1">Every new friend is a <br> new adventure</span>
                     <span class="text-2">Let's get connected</span>

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/principlehome',[UserController::class,'principlehome'])->name('principlehome');
 Route::get('/home',[UserController::class,'home'])->name('home');
 Route::get('/',[UserController::class,'login'])->name('login');
 Route::get('/signup',[UserController::class,'signup'])->name('signup');

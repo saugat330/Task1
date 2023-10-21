@@ -31,18 +31,31 @@ class UserController extends Controller
         
         return view('login');
     }
+    public function principlehome(){
+        return view ('principlehome');
+    }
     public function userLogin(Request $req) {
         $req->validate([
             'email' => 'required',
             'password' => 'required'
         ]);
+
         $alluser = User::where('email' , '=',$req->email)->first();
-        if($alluser){
+        
+        if($alluser)
+        
+        {
+            if($alluser->email=="principle@gmail.com"){
+                if($alluser->password==$req->password){
+                    return redirect('/principlehome');
+                }
+            }else{
             if($alluser->password == $req->password){
                 return redirect('/home');
             }else{
                 return back()->with('password','Wrong password!!!');
             }
+        }
         } else {
             return back()->with('email','Invalid email!!!');
         }
