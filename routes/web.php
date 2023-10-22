@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/signup',[UserController::class,'signup'])->name('signup');
 
 Route::post('/Register',[UserController::class, 'Register'])->name('Register');
 Route::post('/userLogin',[UserController::class, 'userLogin'])->name('userLogin');
+Route::post('/addCourse',[CourseController::class, 'addCourse'])->name('addCourse');

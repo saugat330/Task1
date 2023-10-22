@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function home() {
+        $cours
         return view('home');
     }
     public function login() {
